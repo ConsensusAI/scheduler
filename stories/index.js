@@ -167,7 +167,7 @@ storiesOf("Appointment", module)
       interviewers={interviewers}
       interviewer={4}
       onSave={action("onSave")}
-      onCancel={action("onSave")}
+      onCancel={action("onCancel")}
     />
   ))
   .add("Form Create", () => (
