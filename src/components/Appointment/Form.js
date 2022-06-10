@@ -13,14 +13,11 @@ export default function Form(props) {
         type="text"
         placeholder="Enter Student Name"
         onChange={(event) => setStudent(event.target.value)}
-        /*
-          This must be a controlled component
-          your code goes here
-        */
       />
     </form>
-    <InterviewerList 
-      /* your code goes here */
+    <InterviewerList
+    interviewers={props.interviewers}
+    onChange={props.onChange} 
     />
   </section>
   <section className="appointment__card-right">
