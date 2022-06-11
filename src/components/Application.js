@@ -66,9 +66,7 @@ export default function Application(props) {
   const [day, setDay] = useState("Monday");
 
   const appts = Object.values(appointments).map((appt) => {
-    return (
-      <Appointment key={appt.id} time={appt.time} interview={appt.interview} />
-    );
+    return <Appointment key={appt.id} {...appt} />;
   });
 
   appts.push(<Appointment key="last" time="5pm" />);
