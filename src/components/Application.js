@@ -26,7 +26,7 @@ export default function Application(props) {
       axios.get("/api/interviewers"),
       axios.get("/api/appointments"),
     ]).then((res) => {
-      console.log(res);
+      // console.log(res);
       setState((prev) => ({
         ...prev,
         days: res[0].data,
@@ -37,10 +37,13 @@ export default function Application(props) {
   }, []);
 
   const appts = dailyAppointments.map((appt) => {
+    const interview = getInterview(state, appt.interview);
     return <Appointment key={appt.id} {...appt} />;
   });
 
   appts.push(<Appointment key="last" time="5pm" />);
+
+  console.log(state.interviewers);
 
   return (
     <main className="layout">
