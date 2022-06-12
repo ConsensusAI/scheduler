@@ -26,14 +26,12 @@ export default function Application(props) {
       axios.get("/api/interviewers"),
       axios.get("/api/appointments"),
     ]).then((res) => {
-      // console.log(res);
       setState((prev) => ({
         ...prev,
         days: res[0].data,
         interviewers: res[1].data,
         appointments: res[2].data,
       }));
-      console.log(res[1].data);
     });
   }, []);
 
@@ -43,8 +41,6 @@ export default function Application(props) {
   });
 
   appts.push(<Appointment key="last" time="5pm" />);
-
-  console.log(state.interviewers);
 
   return (
     <main className="layout">
