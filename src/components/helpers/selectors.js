@@ -7,7 +7,7 @@ export function getAppointmentsForDay(state, day) {
 
   let apptArr = [];
   for (let el in state.days) {
-    if (state.days[el].name == day) {
+    if (state.days[el].name === day) {
       apptArr = state.days[el].appointments;
     }
   }
