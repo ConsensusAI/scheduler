@@ -39,9 +39,18 @@ export default function Application(props) {
     });
   }, []);
 
+  const interviewers = getInterviewersForDay(state, state.day);
+
   const appts = dailyAppointments.map((appt) => {
     const interview = getInterview(state, appt.interview);
-    return <Appointment key={appt.id} {...appt} interview={interview} />;
+    return (
+      <Appointment
+        key={appt.id}
+        {...appt}
+        interview={interview}
+        interviewers={interviewers}
+      />
+    );
   });
 
   appts.push(<Appointment key="last" time="5pm" />);
