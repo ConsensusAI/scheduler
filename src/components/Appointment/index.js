@@ -12,7 +12,7 @@ export default function Appointment(props) {
       {props.interview ? (
         <Show
           student={props.interview.student}
-          interviewer={props.interviewer}
+          interviewer={props.interview.interviewer.name}
         />
       ) : (
         <Empty />
