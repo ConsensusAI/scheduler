@@ -3,6 +3,7 @@ import Header from "./Header";
 import Show from "./Show";
 import Empty from "./Empty";
 import Form from "./Form";
+import Status from "./Status";
 
 import "./styles.scss";
 
@@ -23,7 +24,8 @@ export default function Appointment(props) {
       student: name,
       interviewer,
     };
-    props.bookInterview(props.id, interview);
+    transition(SAVING);
+    props.bookInterview(props.id, interview).then(() => transition(SHOW));
   }
 
   // let interviewers = [];
@@ -45,6 +47,7 @@ export default function Appointment(props) {
           onSave={save}
         />
       )}
+      {mode === SAVING && <Status message="Saving" />}
     </article>
   );
 }
