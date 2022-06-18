@@ -4,6 +4,10 @@ Interview Scheduler is a React project serving its eponymous function.
 
 ## Final Product
 
+![Form to Add/Edit Appointment](https://github.com/ConsensusAI/scheduler/blob/master/docs/appointment-form.png)
+
+![Confirming Delete](https://github.com/ConsensusAI/scheduler/blob/master/docs/confirm-delete.png)
+
 ## Setup
 
 Install dependencies with `npm install`.
